@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body style="background-color: rgba(107, 103, 58, 0.379);">
+      {% for n in list %}
+      <div>{{n}}</div>
+      {% endfor %}
+
+      <br>
+      <table border="3" cellpadding="10">
+            <tr>
+                  <th>Sr.no</th>
+                  <th>Name</th>
+                  <th>Phone No</th>
+            </tr>
+            {% for f in student_details %}
+            <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{f.name}}</td>
+                  <td>{{f.phone}}</td>
+            </tr>
+            {% endfor %}
+      </table>
+      {% if numbers|length > 0 %}
+      {% for n in numbers %}
+            {% if n > 20 %}
+            <div>{{n}}</div>
+            {% endif %}
+
+      {% endfor %}
+      {% else %}
+            NO Data Found
+      {% endif %}
+      
+</body>
+</html>
